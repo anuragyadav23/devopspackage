@@ -27,7 +27,7 @@ jobs:
         run: docker build . -t anuragtech/package:s1
 
       - name: Login to Docker Hub
-        run: docker login -u {{ secrets.DOCKER_HUB_USERNAME }} -p {{secrets.DOCKER_HUB_PASSWORD }}
+        run: docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{secrets.DOCKER_HUB_PASSWORD }}
 
       - name: Push Docker Image to Docker Hub
         run: docker push anuragtech/package:s1
